@@ -39,7 +39,7 @@
       </div>
       <div class="right">
         <p>Copyright By Rosarians {{ currentYear }}</p>
-        <p>Created By Rufus Drew</p>
+        <p>Created By Rufus Drew!</p>
       </div>
     </div>
   </footer>
