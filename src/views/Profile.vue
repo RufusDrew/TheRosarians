@@ -25,7 +25,7 @@
           <label for="email">Email:</label>
           <input disabled type="text" id="email" v-model="email" />
         </div>
-        <button @click="updateProfile">Save Changes</button>
+        <button @click="updateProfile" class="butt">Save Changes</button>
       </div>
     </div>
   </div>

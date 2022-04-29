@@ -27,7 +27,7 @@
             <router-link class="link" :to="{ name: 'Blogs' }"
               >Prayers</router-link
             >
-            <!-- <router-link class="link" :to="{ name: 'About_ros' }">About</router-link> -->
+            <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
             <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
               >Create Prayer</router-link
             >
@@ -39,7 +39,7 @@
       </div>
       <div class="right">
         <p>Copyright By Rosarians {{ currentYear }}</p>
-        <p>Created By Rufus Drew!</p>
+        <p>Created By Rufus Drew</p>
       </div>
     </div>
   </footer>

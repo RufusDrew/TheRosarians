@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Blogs from "../views/Blogs.vue";
-// import About_ros from "../views/About_ros.vue";
+import Audibal from "../views/Audibal.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
@@ -35,14 +35,14 @@ const routes = [
       requiresAuth: false,
     },
   },
-  // {
-  //   path: "/about_ros",
-  //   name: "About_ros",
-  //   component: About_ros,
-  //   meta: {
-  //     title: "About Rosarians",
-  //   },
-  // },
+  {
+    path: "/audibal",
+    name: "Audibal",
+    component: Audibal,
+    meta: {
+      title: "Audible",
+    },
+  },
   {
     path: "/login",
     name: "Login",

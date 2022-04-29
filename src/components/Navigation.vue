@@ -10,7 +10,7 @@
         <ul v-show="!mobile">
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           <router-link class="link" :to="{ name: 'Blogs' }">Prayer</router-link>
-          <!-- <router-link class="link" :to="{ name: 'About_ros' }">About</router-link> -->
+          <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
           <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
             >Create Prayer</router-link
           >
@@ -45,12 +45,6 @@
                   <p>Profile</p>
                 </router-link>
               </div>
-              <!-- <div v-if="admin" class="option">
-                <router-link class="option" :to="{ name: 'Admin' }">
-                  <adminIcon class="icon" />
-                  <p>Admin</p>
-                </router-link>
-              </div> -->
               <div @click="signOut" class="option">
                 <signOutIcon class="icon" />
                 <p>Sign Out</p>
@@ -65,7 +59,7 @@
       <ul class="mobile-nav" v-show="mobileNav">
         <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Prayers</router-link>
-        <!-- <router-link class="link" :to="{ name: 'About_ros' }">About</router-link> -->
+        <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
         <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
           >Create Prayer</router-link
         >

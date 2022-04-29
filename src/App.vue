@@ -88,7 +88,7 @@ export default {
     fill: #fff;
   }
 }
-button,
+.butt,
 .router-button {
   transition: 500ms ease all;
   cursor: pointer;
