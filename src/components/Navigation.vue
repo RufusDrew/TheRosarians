@@ -11,6 +11,7 @@
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           <router-link class="link" :to="{ name: 'Blogs' }">Prayer</router-link>
           <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
+          <router-link class="link" :to="{ name: 'My_Rosary' }">Rosary</router-link>
           <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
             >Create Prayer</router-link
           >
@@ -60,6 +61,7 @@
         <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Prayers</router-link>
         <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
+        <router-link class="link" :to="{ name: 'My_Rosary' }">Rosary</router-link>
         <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
           >Create Prayer</router-link
         >

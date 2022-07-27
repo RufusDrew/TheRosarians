@@ -44,6 +44,14 @@ const routes = [
     },
   },
   {
+    path: "myrosary",
+    name: "My_Rosary",
+    beforeEnter() {location.href = 'https://myrosary-4c3ae.web.app/'},
+    meta: {
+      title: "MyRosary",
+    },
+  },
+  {
     path: "/login",
     name: "Login",
     component: Login,
