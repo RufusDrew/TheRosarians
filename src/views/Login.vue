@@ -68,12 +68,13 @@ export default {
 <style lang="scss">
 .form-wrap {
   overflow: hidden;
+  background-color: #fff;
   display: flex;
   height: 100vh;
   justify-content: center;
   align-self: center;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   @media (min-width: 900px) {
     width: 100%;
   }
