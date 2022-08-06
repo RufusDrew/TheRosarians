@@ -44,9 +44,9 @@ const routes = [
     },
   },
   {
-    path: "myrosary",
+    path: "/",
     name: "My_Rosary",
-    beforeEnter() {location.href = 'https://myrosary-4c3ae.web.app/'},
+    beforeEnter() {window.location.href = 'https://myrosary-4c3ae.web.app/'},
     meta: {
       title: "MyRosary",
     },
