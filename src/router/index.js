@@ -41,6 +41,7 @@ const routes = [
     component: Audibal,
     meta: {
       title: "Audible",
+      requiresAuth: false,
     },
   },
   {
@@ -84,7 +85,7 @@ const routes = [
     component: Profile,
     meta: {
       title: "Profile",
-      requiresAuth: false,
+      requiresAuth: true,
     },
   },
   {
@@ -103,7 +104,7 @@ const routes = [
     component: BlogPreview,
     meta: {
       title: "Prayer Preview",
-      requiresAuth: false,
+      requiresAuth: true,
       
     },
   },
@@ -122,7 +123,7 @@ const routes = [
     component: EditBlog,
     meta: {
       title: "Edit Prayer",
-      requiresAuth: false,
+      requiresAuth: true,
     
     },
   },
