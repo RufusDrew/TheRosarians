@@ -35,8 +35,8 @@ import "firebase/storage";
 import db from "../firebase/firebaseInit";
 import Quill from "quill";
 window.Quill = Quill;
-const ImageResize = require("quill-image-resize-module").default;
-Quill.register("modules/imageResize", ImageResize);
+const ImageResize = require('quill-image-resize-module').default;
+Quill.register('modules/imageResize', ImageResize);
 export default {
   name: "CreatePost",
   data() {
@@ -166,6 +166,7 @@ export default {
 .create-post {
   position: relative;
   height: 100%;
+  background-color: #fff;
   button {
     margin-top: 0;
   }
