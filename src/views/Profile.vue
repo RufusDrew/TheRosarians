@@ -7,7 +7,7 @@
         <div class="initials">{{ $store.state.profileInitials }}</div>
         <div class="admin-badge">
           <adminIcon class="icon" />
-          <span>admin</span>
+          <span>User Profile</span>
         </div>
         <div class="input">
           <label for="firstName">First Name:</label>

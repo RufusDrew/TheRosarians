@@ -74,6 +74,7 @@ export default {
   align-self: center;
   margin: 0 auto;
   width: 90%;
+  background-color: white;
   @media (min-width: 900px) {
     width: 100%;
   }

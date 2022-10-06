@@ -166,6 +166,7 @@ export default {
 .create-post {
   position: relative;
   height: 100%;
+  background-color: #fff;
   button {
     margin-top: 0;
   }
