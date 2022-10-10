@@ -74,12 +74,8 @@ export default {
   justify-content: center;
   align-self: center;
   margin: 0 auto;
-<<<<<<< HEAD
-  width: 100%;
-=======
   width: 90%;
   background-color: white;
->>>>>>> dce6d8eaca264a5a46c3377d977b45bd63baf394
   @media (min-width: 900px) {
     width: 100%;
   }
