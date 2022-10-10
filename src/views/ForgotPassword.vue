@@ -28,8 +28,9 @@
 import email from "../assets/Icons/envelope-regular.svg";
 import Modal from "../components/Modal";
 import Loading from "../components/Loading";
-import firebase from "firebase/app";
-import "firebase/auth";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 export default {
   name: "ForgotPassword",
   data() {

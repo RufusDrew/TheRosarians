@@ -77,8 +77,9 @@
 import menuIcon from "../assets/Icons/bars-regular.svg";
 import userIcon from "../assets/Icons/user-alt-light.svg";
 import signOutIcon from "../assets/Icons/sign-out-alt-regular.svg";
-import firebase from "firebase/app";
-import "firebase/auth";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 export default {
   name: "navigation",
   components: {
