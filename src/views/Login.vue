@@ -75,7 +75,7 @@ export default {
   justify-content: center;
   align-self: center;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   background-color: white;
   @media (min-width: 900px) {
     width: 100%;
