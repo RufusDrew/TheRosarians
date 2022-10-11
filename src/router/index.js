@@ -11,9 +11,9 @@ import CreatePost from "../views/CreatePost.vue";
 import BlogPreview from "../views/BlogPreview.vue";
 import ViewBlog from "../views/ViewBlog.vue";
 import EditBlog from "../views/EditBlog.vue";
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
 Vue.use(VueRouter);
 
