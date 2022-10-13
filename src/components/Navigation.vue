@@ -135,8 +135,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import url('http://fonts.cdnfonts.com/css/auralyess-free-trial');
 header {
-  // background-color: #fff;
+  background-color: #fff;
   padding: 0 25px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -156,8 +157,9 @@ header {
       display: flex;
       align-items: center;
       .header {
-        font-weight: 600;
-        font-size: 24px;
+        font-weight: 500;
+        font-size: 26px;
+        font-family: 'Auralyess Free Trial', sans-serif;
         color: #000;
         text-decoration: none;
       }

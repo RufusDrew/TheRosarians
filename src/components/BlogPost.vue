@@ -51,6 +51,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: url("http://www.miracolieucaristici.org/miracoli_images/splash_bkg.jpg");
     align-items: center;
     flex: 4;
     order: 2;
