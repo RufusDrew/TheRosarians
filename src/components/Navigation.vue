@@ -135,7 +135,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('http://fonts.cdnfonts.com/css/auralyess-free-trial');
+@import url('https://fonts.cdnfonts.com/css/auralyess-free-trial');
 header {
   background-color: #fff;
   padding: 0 25px;
