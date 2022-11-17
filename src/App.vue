@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import Navigation from "./components/Navigation";
-import Footer from "./components/Footer";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+const Navigation = () => import('./components/Navigation.vue');
+const Footer = () => import ('./components/Footer.vue');
 export default {
   name: "app",
   components: { Navigation, Footer },
