@@ -4,7 +4,6 @@
       <Navigation v-if="!navigation" />
       <router-view />
       <Footer v-if="!navigation" />
-      <button v-if="isRefresh" @click="update">Update</button> //================
     </div>
   </div>
 </template>
@@ -21,9 +20,6 @@ export default {
   data() {
     return {
       navigation: null,
-      registration:null,
-      isRefresh: false,
-      refreshing: false,
     };
   },
   created() {
@@ -35,17 +31,6 @@ export default {
     });
     this.checkRoute();
     this.$store.dispatch("getPost");
-
-    document.addEventListener( //----------------------------
-        'serviceWorkerUpdateEvent', this.appUpdateUI, { once: true }
-    );
-    navigator.serviceWorker.addEventListener( //-----------------------------
-        'controllerchange', () => {
-          if (this.refreshing) return;
-          this.refreshing = true;
-          window.location.reload();
-        }
-    );
   },
   mounted() {},
   methods: {
@@ -56,22 +41,12 @@ export default {
       }
       this.navigation = false;
     },
-    appUpdateUI:function (e){ //------------------------
-      this.registration = e.detail;
-      this.isRefresh = true;
-    }
   },
   watch: {
     $route() {
       this.checkRoute();
     },
   },
-  update(){ //--------------------
-     this.isRefresh = false;
-     if (this.registration || this.registration.waiting) {
-       this.registration.waiting.postMessage({type:'SKIP_WAITING'});
-     }
-   },
 };
 </script>
 
