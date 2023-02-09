@@ -6,6 +6,7 @@ import Vue2Editor from "vue2-editor";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import './registerServiceWorker';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faPlay,

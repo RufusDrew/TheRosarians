@@ -11,4 +11,10 @@ module.exports = {
       .use("vue-svg-loader")
       .loader("vue-svg-loader");
   },
+  pwa:{
+    workboxPluginMode: "InjectManifest",
+    workboxOptions:{
+        swSrc:"./src/service-worker.js",
+    }
+}
 };
