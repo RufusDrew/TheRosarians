@@ -47,6 +47,10 @@ export default {
       }
       this.navigation = false;
     },
+  async accept() {
+  this.showUpdateUI = false;
+  await this.$workbox.messageSW({ type: "SKIP_WAITING" });
+}
   },
   watch: {
     $route() {
