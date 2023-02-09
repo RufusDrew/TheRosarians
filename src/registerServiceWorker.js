@@ -30,4 +30,8 @@ if (process.env.NODE_ENV === 'production') {
     }
   })
 }
-
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
