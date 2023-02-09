@@ -31,6 +31,12 @@ export default {
     });
     this.checkRoute();
     this.$store.dispatch("getPost");
+    
+    if (this.$workbox) {
+    this.$workbox.addEventListener("waiting", () => {
+      this.showUpdateUI = true;
+    });
+  }
   },
   mounted() {},
   methods: {

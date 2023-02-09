@@ -17,6 +17,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import wb from "./registerServiceWorker";
 
 library.add(faPlay, faPause, faStepForward, faStepBackward, faTimes, faGithub);
 
@@ -25,6 +26,8 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.use(Vue2Editor);
 
 Vue.config.productionTip = false;
+
+Vue.prototype.$workbox = wb;
 
 if ('serviceWorker' in navigator) {
   // register the service worker
