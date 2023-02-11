@@ -5,7 +5,7 @@
         <span>Toggle Editing Prayers</span>
         <input type="checkbox" v-model="editPost" />
       </div>
-      <BlogCard :post="post" v-for="(post, index) in blogPosts" :key="index" />
+      <BlogCard :post="post" loading="lazy" v-for="(post, index) in blogPosts" :key="index" />
     </div>
   </div>
 </template>
