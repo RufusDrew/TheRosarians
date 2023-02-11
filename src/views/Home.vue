@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import BlogPost from "../components/BlogPost";
-import BlogCard from "../components/BlogCard";
-import Arrow from "../assets/Icons/arrow-right-light.svg";
+const BlogPost = () => import("../components/BlogPost");
+const BlogCard = () => import("../components/BlogCard");
+const Arrow = () => import("../assets/Icons/arrow-right-light.svg");
 export default {
   name: "Home",
   components: { BlogPost, BlogCard, Arrow },

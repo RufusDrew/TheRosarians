@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div id="app">
     <main>
       <section class="player">
@@ -179,17 +179,5 @@ export default {
 
 <style>
 @import "../assets/styles/main.css";
-</style> -->
+</style> 
 
-<template>
-  <h1>Page Under Construction  </h1>
-</template>
-
-<style>
-h1 {
-  text-align: center;
-  padding-top: 150px;
-  font-size: 30px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-</style>

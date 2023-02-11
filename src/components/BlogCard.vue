@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import Arrow from "../assets/Icons/arrow-right-light.svg";
-import Edit from "../assets/Icons/edit-regular.svg";
-import Delete from "../assets/Icons/trash-regular.svg";
+const Arrow = () => import("../assets/Icons/arrow-right-light.svg");
+const Edit = () => import("../assets/Icons/edit-regular.svg");
+const Delete = () => import("../assets/Icons/trash-regular.svg");
 export default {
   name: "blogCard",
   props: ["post"],
