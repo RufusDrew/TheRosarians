@@ -6,7 +6,7 @@
       <div class="container">
         <h3>View More Prayers</h3>
         <div class="blog-cards">
-          <BlogCard :post="post" v-for="(post, index) in blogPostsCards" :key="index" /> 
+          <BlogCard :post="post" loading="lazy" v-for="(post, index) in blogPostsCards" :key="index" /> 
         </div>
       </div>
     </div>

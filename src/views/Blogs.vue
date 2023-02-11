@@ -55,7 +55,6 @@ export default {
     input[type="checkbox"] {
       position: relative;
       border: none;
-      -webkit-appearance: none;
       background: #fff;
       outline: none;
       width: 80px;
