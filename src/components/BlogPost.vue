@@ -15,14 +15,14 @@
       </div>
     </div>
     <div class="blog-photo">
-      <img v-if="post.welcomeScreen" loading="lazy" :src="require(`../assets/blogPhotos/${post.photo}.webp`)" alt="" />
+      <img v-if="post.welcomeScreen" :src="require(`../assets/blogPhotos/${post.photo}.webp`)" alt="" />
       <img v-else :src="post.blogCoverPhoto" alt="" />
     </div>
   </div>
 </template>
 
 <script>
-const Arrow = () => import("../assets/Icons/arrow-right-light.svg");
+import Arrow from "../assets/Icons/arrow-right-light.svg";
 export default {
   name: "blogPost",
   props: ["post"],

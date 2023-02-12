@@ -29,8 +29,8 @@
 </template>
 
 <script>
-const BlogCoverPreview = () => import("../components/BlogCoverPreview");
-const Loading = () => import("../components/Loading");
+import BlogCoverPreview from "../components/BlogCoverPreview";
+import Loading from "../components/Loading";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';

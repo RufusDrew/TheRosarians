@@ -6,7 +6,7 @@
       <div class="container">
         <h3>View More Prayers</h3>
         <div class="blog-cards">
-          <BlogCard :post="post" loading="lazy" v-for="(post, index) in blogPostsCards" :key="index" /> 
+          <BlogCard :post="post" v-for="(post, index) in blogPostsCards" :key="index" /> 
         </div>
       </div>
     </div>
@@ -20,9 +20,9 @@
 </template>
 
 <script>
-const BlogPost = () => import("../components/BlogPost");
-const BlogCard = () => import("../components/BlogCard");
-const Arrow = () => import("../assets/Icons/arrow-right-light.svg");
+import BlogPost from "../components/BlogPost";
+import BlogCard from "../components/BlogCard";
+import Arrow from "../assets/Icons/arrow-right-light.svg";
 export default {
   name: "Home",
   components: { BlogPost, BlogCard, Arrow },
