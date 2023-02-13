@@ -1,4 +1,4 @@
-# fireblogs
+# Rosarians
 
 ## Project setup
 ```
