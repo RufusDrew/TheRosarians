@@ -38,7 +38,7 @@
           </button>
         </div>
         <div class="footer">
-          <p>Powered By Rosarians Audible</p>
+          <p>Powered By Rosarians Audible.</p>
         </div>
       </section>
     </main>
