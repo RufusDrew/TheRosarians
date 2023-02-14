@@ -1,13 +1,3 @@
-require( 'path' );
-const Dotenv = require( 'dotenv-webpack' );
-
-const webpackPlugins = [
-  new Dotenv( {
-    path: './.env.development', // Path to .env file (this is the default)
-    systemvars: true,
-  } ),
-];
-
 module.exports = {
   chainWebpack: (config) => {
     const svgRule = config.module.rule("svg");
@@ -30,5 +20,4 @@ module.exports = {
       background_color: '#0E7EC7',
     },
   },
-  plugins: webpackPlugins,
 };
