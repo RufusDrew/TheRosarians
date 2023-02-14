@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "therosarians-b21de"
-  }
+    "default": "therosarians-b21de",
+    "dev": "therosarians-b21de"
+  },
+  "targets": {},
+  "etags": {}
 }
