@@ -11,13 +11,17 @@ module.exports = {
       .use("vue-svg-loader")
       .loader("vue-svg-loader");
   },
+  runtimeCompiler: true,
   pwa: {
     name: 'Rosarians App',
     themeColor: '#1DA3E3',
     msTileColor: '#17DDE3',
     appleMobileWebAppCache: 'yes',
     manifestOptions: {
-      background_color: '#0E7EC7',
+      background_color: '#0E7EC7'
     },
+    workboxPluginMode: "InjectManifest",
+    workboxOptions:{
+      swSrc: "src/service-worker.js"
   },
 };
