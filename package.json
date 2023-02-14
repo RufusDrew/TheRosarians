@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve  --openssl-legacy-provider",
-    "build": "vue-cli-service build  --openssl-legacy-provider",
-    "lint": "vue-cli-service lint  --openssl-legacy-provider"
+    "serve": "vue-cli-service serve --mode development",
+    "build": "vue-cli-service build --mode production",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -15,12 +15,12 @@
     "@vue/runtime-dom": "^3.2.47",
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
+    "dotenv": "^16.0.3",
     "firebase": "^8.6.7",
     "firebase-tools": "^11.14.0",
     "k-progress": "^1.5.0",
     "quill": "^1.3.7",
     "quill-image-resize-module": "^3.0.0",
-    "register-service-worker": "^1.7.2",
     "sass": "^1.50.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",

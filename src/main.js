@@ -6,7 +6,6 @@ import Vue2Editor from "vue2-editor";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import './registerServiceWorker';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faPlay,
@@ -28,15 +27,6 @@ Vue.use(Vue2Editor);
 Vue.config.productionTip = false;
 
 Vue.prototype.$workbox = wb;
-
-if ('serviceWorker' in navigator) {
-  // register the service worker
-  navigator.serviceWorker.register('service-worker.js')
-      .then(function(reg){
-      }).catch(function(err) {
-          console.log("error: ", err)
-      });
-}
 
 let app;
 firebase.auth().onAuthStateChanged(() => {

@@ -1,14 +1,15 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+require('dotenv').config();
 
-var firebaseConfig = {
-    apiKey: "AIzaSyCiC2C9os8y041_3Hx0oxgMTOP8U-T0RiY",
+const firebaseConfig = {
+    apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
     authDomain: "therosarians-b21de.firebaseapp.com",
     projectId: "therosarians-b21de",
     storageBucket: "therosarians-b21de.appspot.com",
-    messagingSenderId: "1051151607866",
-    appId: "1:1051151607866:web:b78b77dc1aaf7ec2b6ed03"
+    messagingSenderId: process.env.VUE_APP_MESSAGING_SENDER_ID,
+    appId: process.env.VUE_APP_FIREBASE_PROJECT_ID
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
