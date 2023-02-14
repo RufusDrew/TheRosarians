@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: set NODE_OPTIONS=--openssl-legacy-provider
-      - run: npm ci && npm run build
+      - run: npm ci && env-cmd -f .env.production npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
