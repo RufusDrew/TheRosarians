@@ -20,9 +20,10 @@ module.exports = {
     manifestOptions: {
       background_color: '#0E7EC7'
     },
-    workboxPluginMode: "InjectManifest",
-    workboxOptions:{
-      swSrc: "src/service-worker.js"
-  },
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: 'src/service-worker.js'
+      
+    }
 },
 };

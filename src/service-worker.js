@@ -1,10 +1,15 @@
+
 /* eslint-disable no-undef */
 
-//Only if you use google analytics and wants to send the offline views
-workbox.googleAnalytics.initialize()
-
 //This is how you can use the network first strategy for files ending with .js
-workbox.routing.registerRoute(/.*\.js/, workbox.strategies.networkFirst())
+workbox.routing.registerRoute(/.*\.js/, workbox.strategies.networkFirst());
+
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+      self.skipWaiting()
+    }
+  });
+
 
 // Use cache but update cache files in the background ASAP
 workbox.routing.registerRoute(
@@ -12,11 +17,19 @@ workbox.routing.registerRoute(
   workbox.strategies.staleWhileRevalidate({
     cacheName: 'css-cache',
   })
-)
+);
+workbox.routing.registerRoute(
+  /.*\.js/,
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'css-js',
+  })
+);
+
+//Cache first, but defining duration and maximum files
 
 //Cache first, but defining duration and maximum files
 workbox.routing.registerRoute(
-  /.*\.(?:png|jpg|jpeg|svg|gif)/,
+  /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
   workbox.strategies.cacheFirst({
     cacheName: 'image-cache',
     plugins: [
@@ -26,7 +39,9 @@ workbox.routing.registerRoute(
       }),
     ],
   })
-)
+);
+
+
 
 workbox.routing.registerRoute(
   new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
@@ -38,4 +53,4 @@ workbox.routing.registerRoute(
       }),
     ],
   })
-)
+);

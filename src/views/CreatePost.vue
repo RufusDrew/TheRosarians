@@ -73,9 +73,6 @@ export default {
       const docRef = storageRef.child(`documents/blogPostPhotos/${file.name}`);
       docRef.put(file).on(
         "state_changed",
-        (snapshot) => {
-          console.log(snapshot);
-        },
         (err) => {
           console.log(err);
         },

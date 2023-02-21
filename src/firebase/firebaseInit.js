@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import "firebase/performance";
 require('dotenv').config();
 
 const firebaseConfig = {
@@ -14,6 +15,6 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
-
+const perf = firebase.performance();
 export { timestamp };
 export default firebaseApp.firestore();
