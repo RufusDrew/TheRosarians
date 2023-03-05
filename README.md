@@ -1,4 +1,4 @@
-# Rosarians
+# The Rosarians
 The Catholic Christian Prayers web app is a dynamic platform built using Vue.js, SCSS, and Firebase. The app offers users the ability to store and access a variety of Catholic Christian prayers, with content that is displayed dynamically based on user input. The app offers CRUD (Create, Read, Update, Delete) functionality, allowing users to add, edit, and delete prayers as desired.
 
 One of the key features of the app is its audio player, which enables users to listen to prayers as they read them. The app also includes a login and register system, with Firebase providing secure authentication and user management. When users log in, they are able to store their own content, including prayers they have added and edited, in a secure database.
