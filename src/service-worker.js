@@ -6,7 +6,7 @@ workbox.routing.registerRoute(/.*\.js/, workbox.strategies.networkFirst());
 
 self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
-      self.skipWaiting()
+      self.skipWaiting();
     }
   });
 

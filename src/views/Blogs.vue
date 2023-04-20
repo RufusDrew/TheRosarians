@@ -5,16 +5,25 @@
         <span>Toggle Editing Prayers</span>
         <input type="checkbox" v-model="editPost" />
       </div>
-      <BlogCard :post="post"  v-for="(post, index) in blogPosts" :key="index" />
+      <BlogCard :post="post" v-for="(post, index) in paginatedBlogPosts" :key="index" />
     </div>
+    <pagination :current-page="currentPage" :total-pages="totalPages" @previous-page="previousPage" @next-page="nextPage" />
   </div>
 </template>
 
 <script>
 import BlogCard from "../components/BlogCard";
+import Pagination from "../components/Pagination";
+
 export default {
   name: "prayers",
-  components: { BlogCard },
+  components: { BlogCard, Pagination },
+  data() {
+    return {
+      currentPage: 1,
+      itemsPerPage: 12
+    };
+  },
   computed: {
     blogPosts() {
       return this.$store.state.blogPosts;
@@ -30,15 +39,33 @@ export default {
         this.$store.commit("toggleEditPost", payload);
       },
     },
-    // profileUser() {
-    //   return this.$store.state.profileUser;
-    // },
+    totalPages() {
+      return Math.ceil(this.blogPosts.length / this.itemsPerPage);
+    },
+    paginatedBlogPosts() {
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      return this.blogPosts.slice(startIndex, endIndex);
+    },
   },
   beforeDestroy() {
     this.$store.commit("toggleEditPost", false);
   },
+  methods: {
+    previousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    },
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+  },
 };
 </script>
+
 
 <style lang="scss" scoped>
 .blog-cards {

@@ -72,7 +72,6 @@
     </transition>
   </header>
 </template>
-
 <script>
 import menuIcon from "../assets/Icons/bars-regular.svg";
 import userIcon from "../assets/Icons/user-alt-light.svg";
@@ -135,7 +134,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import url('https://fonts.cdnfonts.com/css/auralyess-free-trial');
+@import url('https://fonts.cdnfonts.com/css/auralyess-free-trial');
 header {
   background-color: #fff;
   padding: 0 25px;

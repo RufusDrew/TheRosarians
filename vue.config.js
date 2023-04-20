@@ -11,7 +11,6 @@ module.exports = {
       .use("vue-svg-loader")
       .loader("vue-svg-loader");
   },
-  runtimeCompiler: true,
   pwa: {
     name: 'Rosarians App',
     themeColor: '#1DA3E3',
