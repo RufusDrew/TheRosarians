@@ -1,6 +1,6 @@
 <template>
     <div class="pagination">
-      <button class="pagination__button" :disabled="currentPage === 1" @click="previousPage">Previous</button>
+      <button class="pagination__button" :disabled="currentPage === 1" @click="previousPage">Prev</button>
       <span class="pagination__page">{{ currentPage }} / {{ totalPages }}</span>
       <button class="pagination__button" :disabled="currentPage === totalPages" @click="nextPage">Next</button>
     </div>

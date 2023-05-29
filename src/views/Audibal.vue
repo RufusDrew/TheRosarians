@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div id="app">
       <main>
         <section class="player">
@@ -179,4 +179,4 @@
   
   <style>
   @import "../assets/styles/main.css";
-  </style>   
+  </style>    -->

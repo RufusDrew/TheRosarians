@@ -1,32 +1,42 @@
-/* eslint-disable no-console */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then((registration) => {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
 
-import { register } from 'register-service-worker'
+      registration.addEventListener('updatefound', () => {
+        // An updated service worker has been found
+        const installingWorker = registration.installing;
 
-if (process.env.NODE_ENV === 'production') {
-  register(`${process.env.BASE_URL}service-worker.js`, {
-    ready () {
-      console.log(
-        'App is being served from cache by a service worker.\n' +
-        'For more details, visit https://goo.gl/AFskqB'
-      )
-    },
-    registered () {
-      console.log('Service worker has been registered.');
-    },
-    cached () {
-      console.log('Content has been cached for offline use.');
-    },
-    updatefound () {
-      console.log('New content is downloading.');
-    },
-    updated (registration) {
-      console.log('New content is available; please refresh.');
-    },
-    offline () {
-      console.log('No internet connection found. App is running in offline mode.');
-    },
-    error (error) {
-      console.error('Error during service worker registration:', error);
+        installingWorker.addEventListener('statechange', () => {
+          // The service worker state has changed
+          if (installingWorker.state === 'installed') {
+            if (navigator.serviceWorker.controller) {
+              // A previously installed service worker exists
+              console.log('New content is available; please refresh.');
+
+              // Emit a custom event to notify the application
+              const event = new CustomEvent('swUpdated', { detail: { updated: true } });
+              window.dispatchEvent(event);
+            } else {
+              // No previous service worker exists, this is the first installation
+              console.log('Content is cached for offline use.');
+            }
+          }
+        });
+      });
+    })
+    .catch((error) => {
+      // Registration failed
+      console.log('ServiceWorker registration failed: ', error);
+    });
+
+  // Ensure refresh is only called once
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshing) {
+      window.location.reload();
+      refreshing = true;
     }
-  })
+  });
 }

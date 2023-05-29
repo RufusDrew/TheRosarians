@@ -10,6 +10,7 @@
     "build:prod": "env-cmd -f .env.production npm run build && firebase deploy -P prod"
   },
   "dependencies": {
+    "@firebase/messaging": "^0.12.4",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -31,6 +32,7 @@
     "vue-svg-loader": "^0.16.0",
     "vue2-editor": "^2.10.2",
     "vuex": "^3.4.0",
+    "workbox-cacheable-response": "^6.5.4",
     "workbox-recipes": "^6.5.4"
   },
   "devDependencies": {
@@ -48,6 +50,7 @@
     "gulp-sass": "^5.1.0",
     "sass-loader": "^8.0.2",
     "url-loader": "^4.1.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^4.8.0"
   }
 }

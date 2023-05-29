@@ -27,13 +27,14 @@
             <router-link class="link" :to="{ name: 'Blogs' }"
               >Prayers</router-link
             >
-            <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
+            <!-- <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link> -->
             <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
               >Create Prayer</router-link
             >
             <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
               >Login In / Register</router-link
             >
+            <router-link class="link" :to="{ name: 'Policy' }">Privacy policy</router-link>
           </ul>
         </div>
       </div>

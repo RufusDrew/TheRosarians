@@ -10,7 +10,7 @@
         <ul v-show="!mobile">
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           <router-link class="link" :to="{ name: 'Blogs' }">Prayer</router-link>
-          <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
+          <!-- <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link> -->
           <router-link class="link" :to="{ name: 'My_Rosary' }">Holy-Rosary</router-link>
           <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
             >Create Prayer</router-link
@@ -60,7 +60,7 @@
       <ul class="mobile-nav" v-show="mobileNav">
         <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Prayers</router-link>
-        <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link>
+        <!-- <router-link class="link" :to="{ name: 'Audibal' }">Audible</router-link> -->
         <router-link class="link" :to="{ name: 'My_Rosary' }">Holy-Rosary</router-link>
         <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }"
           >Create Prayer</router-link
@@ -134,7 +134,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.cdnfonts.com/css/auralyess-free-trial');
 header {
   background-color: #fff;
   padding: 0 25px;

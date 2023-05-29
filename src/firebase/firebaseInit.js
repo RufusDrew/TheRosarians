@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import "firebase/performance";
+import 'firebase/messaging';
 require('dotenv').config();
 
 const firebaseConfig = {

@@ -7,17 +7,17 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faPlay,
-  faPause,
-  faStepForward,
-  faStepBackward,
-  faTimes
-} from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+// import {
+//   faPlay,
+//   faPause,
+//   faStepForward,
+//   faStepBackward,
+//   faTimes
+// } from "@fortawesome/free-solid-svg-icons";
+// import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "./registerServiceWorker";
-library.add(faPlay, faPause, faStepForward, faStepBackward, faTimes, faGithub);
+// library.add(faPlay, faPause, faStepForward, faStepBackward, faTimes, faGithub);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 

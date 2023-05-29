@@ -1,55 +1,72 @@
+workbox.setConfig({
+  debug: false, // Set to true for debugging
+});
 
-/* eslint-disable no-undef */
+// Precache static assets
+workbox.precaching.precacheAndRoute([
+  { url: '/', revision: '1' }, // Add URLs of your static files here
+  { url: '/styles.css', revision: '1' },
+  { url: '/script.js', revision: '1' },
+  // Add more static assets as needed
+]);
 
-//This is how you can use the network first strategy for files ending with .js
-workbox.routing.registerRoute(/.*\.js/, workbox.strategies.networkFirst());
-
-self.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'SKIP_WAITING') {
-      self.skipWaiting();
-    }
-  });
-
-
-// Use cache but update cache files in the background ASAP
+// Cache static files from a specific directory
 workbox.routing.registerRoute(
-  /.*\.css/,
-  workbox.strategies.staleWhileRevalidate({
-    cacheName: 'css-cache',
-  })
-);
-workbox.routing.registerRoute(
-  /.*\.js/,
-  workbox.strategies.staleWhileRevalidate({
-    cacheName: 'css-js',
-  })
-);
-
-//Cache first, but defining duration and maximum files
-
-//Cache first, but defining duration and maximum files
-workbox.routing.registerRoute(
-  /.*\.(?:png|jpg|jpeg|svg|gif|webp)/,
-  workbox.strategies.cacheFirst({
-    cacheName: 'image-cache',
+  /\.(?:js|css|html|png|jpg|jpeg|svg|webp)$/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'static-cache',
     plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 20,
-        maxAgeSeconds: 7 * 24 * 60 * 60,
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 50, // Adjust as needed
+        maxAgeSeconds: 2592000, // 30 days
       }),
     ],
   })
 );
 
-
-
+// Serve cached files when offline
 workbox.routing.registerRoute(
-  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-  workbox.strategies.cacheFirst({
-    cacheName: 'googleapis',
+  ({ event }) => event.request.mode === 'navigate',
+  new workbox.strategies.NetworkFirst({
+    cacheName: 'offline-cache',
     plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 30,
+      new workbox.expiration.ExpirationPlugin({
+        maxEntries: 50, // Adjust as needed
+      }),
+    ],
+  })
+);
+
+// Cache assets with specific HTTP caching headers and validation mechanisms
+workbox.routing.registerRoute(
+  /\.(?:json|xml)$/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'http-cache',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        statuses: [200], // Cache successful responses only
+        headers: {
+          'Cache-Control': 'public, max-age=60', // Cache for 1 minute
+          'ETag': 'true', // Enable ETag caching
+          'Last-Modified': 'true', // Enable Last-Modified caching
+        },
+      }),
+    ],
+  })
+);
+
+// Cache Google Fonts using Cache-Control header and validation mechanisms
+workbox.routing.registerRoute(
+  /^https:\/\/fonts\.googleapis\.com/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'google-fonts-cache',
+    plugins: [
+      new workbox.cacheableResponse.CacheableResponsePlugin({
+        headers: {
+          'Cache-Control': 'public, max-age=31536000', // Cache for 1 year
+          'ETag': 'true', // Enable ETag caching
+          'Last-Modified': 'true', // Enable Last-Modified caching
+        },
       }),
     ],
   })

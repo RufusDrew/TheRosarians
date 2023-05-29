@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Blogs from "../views/Blogs.vue";
-import Audibal from "../views/Audibal.vue";
+// import Audibal from "../views/Audibal.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
@@ -12,6 +12,7 @@ import BlogPreview from "../views/BlogPreview.vue";
 import ViewBlog from "../views/ViewBlog.vue";
 import EditBlog from "../views/EditBlog.vue";
 import firebase from 'firebase/app';
+import Policy from '../views/Policy.vue';
 import 'firebase/auth';
 import 'firebase/firestore';
 
@@ -36,15 +37,15 @@ const routes = [
       requiresAuth: false,
     },
   },
-  {
-    path: "/audibal",
-    name: "Audibal",
-    component: Audibal,
-    meta: {
-      title: "Audible",
-      requiresAuth: false,
-    },
-  },
+  // {
+  //   path: "/audibal",
+  //   name: "Audibal",
+  //   component: Audibal,
+  //   meta: {
+  //     title: "Audible",
+  //     requiresAuth: false,
+  //   },
+  // },
   {
     path: "/",
     name: "My_Rosary",
@@ -125,7 +126,15 @@ const routes = [
     meta: {
       title: "Edit Prayer",
       requiresAuth: true,
-    
+    },
+  },
+  {
+    path: "/policy",
+    name: "Policy",
+    component: Policy,
+    meta: {
+      title: "Policy",
+      requiresAuth: false,
     },
   },
 ];
